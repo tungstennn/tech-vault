@@ -103,13 +103,13 @@ While working on Kubernetes cluster enhancements, you need to set up a recurring
 
 Pick ONE option:
 
-1. `kubectl run cronjob task --image=toolbox --schedule="*/1 * * * * -- curl -s https://api.cyber-widget.com/refresh"`
-  
-2. `kubecmd create periodic-task --image=toolbox --timing="/1 * * * * -- curl -s https://api.cyber-widget.com/refresh"`
-  
-3. `kubecmd run periodic task --image=toolbox --timing="*/1 * * * * -- curl -s https://api.cyber-widget.com/refresh"`
-  
-4. `kubectl create cronjob task --image=toolbox --schedule="*/1 * * * * -- curl -s https://api.cyber-widget.com/refresh"`
+1. `kubectl run cronjob task --image=toolbox --schedule="*/1 * * * *" -- curl -s https://api.cyber-widget.com/refresh`
+
+2. `kubecmd create periodic-task --image=toolbox --timing="/1 * * * *" -- curl -s https://api.cyber-widget.com/refresh`
+
+3. `kubecmd run periodic task --image=toolbox --timing="*/1 * * * *" -- curl -s https://api.cyber-widget.com/refresh`
+
+4. `kubectl create cronjob task --image=toolbox --schedule="*/1 * * * *" -- curl -s https://api.cyber-widget.com/refresh`
 
 **Notes:**
 
@@ -126,15 +126,15 @@ Scenario:
 In the directory `/home/ubuntu/tech-vault-q4/taskrunner.sh`, you have an SSL certificate named `security.crt` and a private key named `secrecy.key`. Complete the `taskrunner.sh` file with steps to accomplish the following:
 
 - **Task 1**: Create a new User entry in Kubeconfig named `operator` using the `security.crt` and `secrecy.key` located in `/home/ubuntu/tech-vault-q4/`.
-  
+
 - **Task 2**: Create a new Context entry named `operator` in Kubeconfig for the newly created User `operator`.
 
 **Notes**
 
 - The completed solution will be evaluated in a fresh environment. Make sure all your changes are in the `taskrunner.sh` file located in `/home/ubuntu/tech-vault-q4/`. Manual changes will not be preserved.
-  
+
 - Run `sudo execute` from the question directory to test the solution. (Hint: use alias)
-  
+
 - Sudo privileges are available, if needed.
 
 ```
@@ -247,7 +247,7 @@ Your objective is to create a Terraform script that automates the following:
 Your task is to write an Ansible playbook that automates the following tasks on a remote Ubuntu server:
 
 - **Step 1**: Update the package manager cache.
-  
+
 - **Step 2**: Install the Apache web server package (`apache2`).
 
 - **Step 3**: Enable and start the Apache service.
@@ -378,11 +378,11 @@ Write a Terraform configuration that accomplishes the following:
 4. Implement remote state management using AWS S3 and state locking with DynamoDB.
 5. Make sure to use variables to make your modules reusable.
 6. Use locals to define any constant values or computations that are reused within the configuration.
-  
+
 ### Constraints
 - Your Terraform configuration should adhere to best practices like proper formatting, commenting, and resource naming conventions.
 - Ensure your code is idempotent, meaning running it multiple times won't cause changes unless the actual configuration has changed.
-  
+
 ### Bonus
 - Implement a basic level of security by using AWS security groups to restrict traffic.
 - Use Terraform workspaces to manage different environments (e.g., staging, production).
@@ -468,7 +468,6 @@ Create an Infrastructure as Code (IaC) template using Terraform that accomplishe
   - Any assumptions or design choices you made.
 
 ```
-
 
 ## 13. Azure Security Challenge
 
@@ -920,7 +919,7 @@ Test the routing by accessing the service endpoint multiple times. You should se
 
 Solution here >> [Solution](./code/q23/README.md) >> Only look once you have attemptesd the question.
 
-```bash
+````bash
 
 ```bash
 
@@ -967,7 +966,7 @@ BONUS:
 - Hint: You may use OPA playground to assist and for testing
 For the sake of this exercise, you can assume that you have AWS credentials set up, and you're familiar with basic OPA and Terraform commands. If the OPA policies fail, Terraform should not provision the S3 bucket.
 
-```
+````
 
 ## 24. Create Immutable AMIs with Packer
 
@@ -1078,7 +1077,6 @@ You are the lead engineer responsible for the resilience of a microservice-based
 
 ```
 
-
 ## 28. Monitoring and Alerting
 
 Solution here >> [Solution](./code/q28/README.md) >> Only look once you have attemptesd the question.
@@ -1146,7 +1144,6 @@ Brief documentation explaining:
 - Instructions for deploying and tearing down the infrastructure.
 
 ```
-
 
 ## 30. Network Automation with Ansible
 
@@ -1254,7 +1251,7 @@ Solution here >> [Solution](./code/q32/README.md) >> Only look once you have att
 
 ```bash
 
-Set up a basic local development environment using `docker-compose`. 
+Set up a basic local development environment using `docker-compose`.
 
 This environment will include three services:
 
@@ -1462,21 +1459,21 @@ Your task is to create a Bash script that can install, configure, and manage the
 
 ### Specific Requirements
 
-1. **Interactivity**: 
+1. **Interactivity**:
     - The script should interactively ask the user which software they want to install.
     - Offer a menu of choices and allow multiple selections.
-  
-2. **Installation and Configuration**: 
+
+2. **Installation and Configuration**:
     - For MySQL and PostgreSQL, set the root password, create a database, and create a user.
     - For Nginx and Apache, configure a virtual host.
 
-3. **Logging**: 
+3. **Logging**:
     - All actions, errors, and user inputs should be logged to a log file with a timestamp.
 
-4. **Status Checks**: 
+4. **Status Checks**:
     - Add an option in the script to check the status of all installed services.
 
-5. **Uninstallation**: 
+5. **Uninstallation**:
     - Provide an option to uninstall any of the installed software and remove any configurations made by the script.
 
 ## Constraints
@@ -1494,10 +1491,10 @@ Your task is to create a Bash script that can install, configure, and manage the
 
 ## Bonus Points
 
-- **Error Handling**: 
+- **Error Handling**:
     - Robust error handling and informative error messages.
-  
-- **Dry-Run Mode**: 
+
+- **Dry-Run Mode**:
     - Add a 'dry-run' mode that only displays the commands that would be executed, without actually running them.
 
 ```
@@ -1601,7 +1598,6 @@ You are a DevOps Engineer at an emerging tech company. As the company grows, sec
 
 ```
 
-
 ## 39. Automated Backup and Restore Process
 
 Solution here >> [Solution](./code/q39/README.md) >> Only look once you have attemptesd the question.
@@ -1664,12 +1660,12 @@ You are responsible for maintaining a large fleet of servers that need to have s
 ## Objectives
 
 1. **Set up Puppet Master and Agent**: Configure a Puppet master and at least one Puppet agent. Validate successful communication between them.
-   
+
 2. **Implement Standard Configurations**: Create Puppet manifests to standardize the following configurations across all servers:
     - Install and manage a web server (e.g., Apache or Nginx).
     - Set up user accounts with specific permissions.
     - Ensure specific packages are installed or removed.
-   
+
 3. **Test-Driven Development (TDD)**: Before deploying any changes to configurations, write tests to validate them. Use `rspec-puppet` or a similar testing framework for this.
 
 4. **Monitoring**: Make sure to include monitoring checks to verify configurations.
